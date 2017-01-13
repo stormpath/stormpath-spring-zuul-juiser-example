@@ -1,0 +1,17 @@
+zuul:
+  routes:
+    app:
+      path: /**
+      url: http://localhost:8080
+
+server:
+  port: 8000
+  use-forward-headers: true
+
+stormpath:
+  zuul:
+    account:
+      header:
+        jwt:
+          key:
+            resource: classpath:rsatest.priv.pem
