@@ -43,6 +43,10 @@
             <groupId>com.stormpath.spring</groupId>
             <artifactId>stormpath-zuul-spring-cloud-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
         <!-- Runtime-only dependencies for the example: -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
