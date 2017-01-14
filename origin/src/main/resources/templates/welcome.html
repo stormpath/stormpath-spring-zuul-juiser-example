@@ -16,14 +16,114 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<h1>Hello, <span th:text="${name}">Joe</span>!</h1>
-<div th:unless="${user}">
+<h1>Hello<span th:if="${user.authenticated}" th:text="' ' + ${user.givenName}"> Joe</span>!</h1>
+<div th:unless="${user.authenticated}">
     <a th:href="@{/login}">Login</a>
 </div>
-<div th:if="${user}">
+<div th:if="${user.authenticated}">
     <form id="logoutForm" th:action="@{/logout}" method="post">
         <input type="submit" value="Logout"/>
     </form>
 </div>
+
+<h2>User Properties</h2>
+<table>
+    <thead>
+    <tr>
+        <th align="left">Name</th>
+        <th align="left">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td nowrap="nowrap"><code>anonymous</code></td>
+        <td nowrap="nowrap" th:text="${user.anonymous}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>authenticated</code></td>
+        <td nowrap="nowrap" th:text="${user.authenticated}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>href</code></td>
+        <td nowrap="nowrap" th:text="${user.href}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>id</code></td>
+        <td nowrap="nowrap" th:text="${user.id}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>name</code></td>
+        <td nowrap="nowrap" th:text="${user.name}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>givenName</code></td>
+        <td nowrap="nowrap" th:text="${user.givenName}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>middleName</code></td>
+        <td nowrap="nowrap" th:text="${user.middleName}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>familyName</code></td>
+        <td nowrap="nowrap" th:text="${user.familyName}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>nickname</code></td>
+        <td nowrap="nowrap" th:text="${user.nickname}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>username</code></td>
+        <td nowrap="nowrap" th:text="${user.username}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>profile</code></td>
+        <td nowrap="nowrap" th:text="${user.profile}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>picture</code></td>
+        <td nowrap="nowrap" th:text="${user.picture}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>website</code></td>
+        <td nowrap="nowrap" th:text="${user.website}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>email</code></td>
+        <td nowrap="nowrap" th:text="${user.email}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>emailVerified</code></td>
+        <td nowrap="nowrap" th:text="${user.emailVerified}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>gender</code></td>
+        <td nowrap="nowrap" th:text="${user.gender}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>birthdate</code></td>
+        <td nowrap="nowrap" th:text="${user.birthdate}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>zoneInfo</code></td>
+        <td nowrap="nowrap" th:text="${user.zoneInfo}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>phoneNumber</code></td>
+        <td nowrap="nowrap" th:text="${user.phone}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>phoneNumberVerified</code></td>
+        <td nowrap="nowrap" th:text="${user.phoneNumberVerified}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>createdAt</code></td>
+        <td nowrap="nowrap" th:text="${user.createdAt}"></td>
+    </tr>
+    <tr>
+        <td nowrap="nowrap"><code>updatedAt</code></td>
+        <td nowrap="nowrap" th:text="${user.updatedAt}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
